@@ -2,10 +2,11 @@ import { addDoc, collection } from 'firebase/firestore';
 import { useState } from 'react';
 import { auth, db } from '../../firebase/firebase-config';
 import Error from '../../../Utils/Error/Error';
+import { ErrorStateProps } from '../../../Utils/Interfaces/Error';
 
 const CreateNote = () => {
   const [titleFocus, setTitleFocus] = useState(false);
-  const [error, setError] = useState({
+  const [error, setError] = useState<ErrorStateProps>({
     isModalOpen: false,
     message: '',
   });
@@ -20,6 +21,8 @@ const CreateNote = () => {
   const postCollectionRef = collection(db, 'posts');
   const postNote = async (e: any) => {
     e.preventDefault();
+    // console.log(auth.currentUser?.email);
+
     if (
       localStorage.getItem('firebaseEmail') !== undefined ||
       localStorage.getItem('firebaseEmail') !== 'undefined'
@@ -45,8 +48,6 @@ const CreateNote = () => {
         });
       }
     } else {
-      console.log('he');
-
       setError({ ...error, isModalOpen: true, message: 'User not Signed In' });
     }
   };

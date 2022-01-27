@@ -5,11 +5,7 @@ import { ModalProps } from '../../../Utils/Interfaces/Modal';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebase-config';
 
-const RegisterModal: NextPage<ModalProps> = ({
-  setIsModalOpen,
-  isModalOpen,
-  closeModal,
-}) => {
+const RegisterModal: NextPage<ModalProps> = ({ isModalOpen, closeModal }) => {
   const [userData, setUserData] = useState({
     email: '',
     password: '',
@@ -17,13 +13,13 @@ const RegisterModal: NextPage<ModalProps> = ({
 
   const registerUser = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         userData.email,
         userData.password
       );
 
-      console.log(user);
+      // console.log(user);
     } catch (err: any) {
       console.log(err.message);
     }

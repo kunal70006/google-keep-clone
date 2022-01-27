@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { NextPage } from 'next';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { ErrorProps } from '../Interfaces/Error';
 
 const Error: NextPage<ErrorProps> = ({ error, clearErr }) => {

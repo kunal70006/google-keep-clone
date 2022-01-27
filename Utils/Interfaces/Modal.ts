@@ -1,5 +1,12 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface ModalProps {
-  setIsModalOpen: any;
-  isModalOpen: object;
-  closeModal: any;
+  setIsModalOpen: Dispatch<SetStateAction<isModalOpen>>;
+  isModalOpen: isModalOpen;
+  closeModal(): void;
+}
+
+export interface isModalOpen {
+  loginModal?: boolean;
+  registerModal?: boolean;
 }

@@ -1,4 +1,9 @@
 export interface ErrorProps {
-  clearErr: any;
+  clearErr(): void;
   error: any;
+}
+
+export interface ErrorStateProps {
+  isModalOpen: boolean;
+  message: string;
 }

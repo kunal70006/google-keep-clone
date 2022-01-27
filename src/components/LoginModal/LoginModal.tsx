@@ -5,11 +5,7 @@ import { ModalProps } from '../../../Utils/Interfaces/Modal';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebase-config';
 
-const LoginModal: NextPage<ModalProps> = ({
-  setIsModalOpen,
-  isModalOpen,
-  closeModal,
-}) => {
+const LoginModal: NextPage<ModalProps> = ({ isModalOpen, closeModal }) => {
   const [userData, setUserData] = useState({
     email: '',
     password: '',
@@ -23,7 +19,7 @@ const LoginModal: NextPage<ModalProps> = ({
         userData.password
       );
 
-      console.log(user);
+      // console.log(user);
     } catch (err: any) {
       console.log(err.message);
     }
