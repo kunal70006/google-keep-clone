@@ -134,6 +134,7 @@ const NoteModal: NextPage<NoteModalProps> = ({ isOpen, setIsOpen, note }) => {
                     className=" font-medium leading-6 text-gray-900"
                   >
                     <input
+                      maxLength={28}
                       type="text"
                       value={noteData.title}
                       onChange={(e) =>

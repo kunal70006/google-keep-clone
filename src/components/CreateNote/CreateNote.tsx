@@ -58,6 +58,7 @@ const CreateNote = () => {
       <div className="flex w-full justify-center">
         <form className="flex flex-col">
           <input
+            maxLength={28}
             type="text"
             placeholder="Title"
             value={note.title || ''}

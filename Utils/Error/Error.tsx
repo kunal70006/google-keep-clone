@@ -12,7 +12,7 @@ const Error: NextPage<ErrorProps> = ({ error, clearErr }) => {
           className="fixed inset-0 z-10 overflow-y-auto"
           onClose={clearErr}
         >
-          <div className="flex min-h-screen items-end justify-end px-4">
+          <div className="flex  items-end justify-end  px-4">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
